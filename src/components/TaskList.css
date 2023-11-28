@@ -1,0 +1,32 @@
+#taskList {
+    background-color: #6d6d6d;
+    width: 60vw;
+    height: max-content;
+    margin: 10vw auto;
+    border-radius: 5px;
+    border: 1px solid #e7e7e7;
+}
+
+#taskList h1 {
+    text-align: center;
+    text-transform: uppercase;
+    word-spacing: 3px;
+    letter-spacing: 6px;
+    font-size: 50px;
+    font-family: sans-serif;
+    color: #e7e7e7;
+}
+
+#taskList #formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#formulario ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

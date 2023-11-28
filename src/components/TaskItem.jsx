@@ -1,3 +1,5 @@
+import './TaskItem.css'
+
 export default function TaskItem({ item, handleDelete, index }) {
   return (
     <li key={item}>

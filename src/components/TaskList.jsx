@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TaskForm from "./TaskForm";
 import TaskItem from "./TaskItem";
 
+import './TaskList.css'
+
 export default function TaskList() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(() => {
+    const savedTasks = localStorage.getItem('task');
+    if(savedTasks){
+      return JSON.parse(savedTasks);
+    }else {
+      return[];
+    }
+  });
+
   const [inputValue, setInputValue] = useState("");
+
+
+  useEffect(() => {
+    localStorage.setItem('task', JSON.stringify(list));
+  }, [list]);
 
   function handleChange(e) {
     setInputValue(e.target.value);
@@ -23,8 +38,9 @@ export default function TaskList() {
   }
 
   return (
-    <div>
+    <div id="taskList">
       <h1>Todo List</h1>
+      <div id="formulario">
       <TaskForm
         handleSubmit={handleSubmit}
         handleChange={handleChange}
@@ -35,6 +51,8 @@ export default function TaskList() {
           <TaskItem item={item} handleDelete={handleDelete} index={index} />
         ))}
       </ul>
+      </div>
+      
     </div>
   );
 }

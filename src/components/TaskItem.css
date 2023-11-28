@@ -1,0 +1,20 @@
+li {
+    font-size: 25px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+li button{
+    background-color: #000000;
+    margin-left: 20px;
+    border-style: none;
+    height: 25px;
+    color: white;
+    border-radius: 6px;
+    margin: 10px;
+}
+
+li button:hover {
+    background-color: #454545;
+}
