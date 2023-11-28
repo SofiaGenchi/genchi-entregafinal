@@ -48,7 +48,11 @@ export default function TaskList() {
       />
       <ul>
         {list.map((item, index) => (
-          <TaskItem item={item} handleDelete={handleDelete} index={index} />
+          <TaskItem
+            key={item}
+            item={item}
+            handleDelete={() => handleDelete(index)}
+          />
         ))}
       </ul>
       </div>
